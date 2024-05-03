@@ -56,12 +56,12 @@ public String DeleteProductById(@PathVariable Long id) {
 @ExceptionHandler
 @ResponseStatus(HttpStatus.NOT_ACCEPTABLE)
 public String getCommonException(CommonException ex) {
-	LOGGER.error("Handling error with message: {}", ex.getMessage());
+	LOGGER.error("Handling error with message is: {}", ex.getMessage());
 	
 	return ex.getMessage();
 }
 @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-public String getException(Exception ex) {
+public String getException(RuntimeException ex) {
 	LOGGER.error("Handling error with message: {}", ex.getMessage());
 	
 	return ex.getMessage();
